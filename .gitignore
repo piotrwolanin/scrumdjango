@@ -1,0 +1,9 @@
+local.py
+db.sqlite3
+.env
+migrations
+scrumdjango/static/
+__pycache__
+.pytest_cache
+.vscode
+TODO.md

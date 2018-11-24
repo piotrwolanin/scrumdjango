@@ -1,0 +1,31 @@
+@import "base";
+@import "utilities";
+@import "main/layout";
+@import "main/components/button";
+@import "main/components/form";
+@import "main/components/navbar";
+@import "main/components/note";
+@import "main/components/scrumboard";
+@import "main/components/table";
+
+.heading {
+    margin: 2rem;
+    font-size: 2.2rem;
+}
+
+.sub-heading {
+    margin: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.empty-msg {
+    display: flex;
+    justify-content: center;
+    margin: 3rem;
+    font-size: 1.4rem;
+}
+
+svg {
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+}

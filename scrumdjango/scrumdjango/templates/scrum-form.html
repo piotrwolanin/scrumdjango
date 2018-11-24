@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+    {% if title %}
+    <h1 class="heading">{{ title }}</h1>
+    {% endif %}
+
+    <form method="POST" class="form-vertical">
+        {% csrf_token %}
+
+        {% include 'single-form.html' %}
+
+        {% if form %}
+            <div class="small"><p>*Denotes required field(s).</p></div>
+        {% endif %}
+        <div class="btn-wrapper">
+            <input class="btn {{ btn_class }}" type="submit" value="{% if btn_title %}{{ btn_title }}{% else %}Submit{% endif %}">
+
+        {% block buttons %}
+        {% endblock %}
+
+        </div>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Add multiple tasks{% endblock %}
+
+{% block content %}
+
+    {% if title %}
+    <h1 class="heading">{{ title }}</h1>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        <span id="create-tasks">
+
+            {{ formset.management_form }}
+            {% for form in formset %}
+                <div class="form-horizontal">
+                    {% include 'single-form.html' %}
+                    <a role="button" class="btn danger remove-form">{% include 'trashcan.svg' %}</a>
+                </div>        
+            {% endfor %}
+
+        </span>
+
+        {% if btn_class != 'danger' %}
+            <div class="small"><p>*Denotes required field(s).</p></div>
+        {% endif %}
+        <div class="btn-wrapper">
+            <input class="btn {{ btn_class }}" type="submit" value="{% if btn_title %}{{ btn_title }}{% else %}Submit{% endif %}">
+            <a role="button" id="add-form" class="btn info">Add a form</a>
+            <a role="button" class="btn cancel" href="{% if sprint_id %}{% url 'scrumboard:sprint_details' sprint_id %}{% else %}{% url 'scrumboard:all_sprints' %}{% endif %}">Cancel</a>
+        </div>
+    </form>
+
+<script src="{% static 'scrumboard/formset.js' %}"></script>
+
+{% endblock %}

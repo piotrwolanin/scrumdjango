@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Backlog{% endblock %}
+
+{% block content %}
+
+    <h1 class="heading">Backlog</h1>
+
+    {% if backlog %}
+
+    <div class="table-backlog">
+            <div class="table-header">Text</div>
+            <div class="table-header">Points</div>
+            <div class="table-header">Assign to sprint</div>
+            <div class="table-header">Edit</div>
+            <div class="table-header">Delete</div>
+
+            {% for item in backlog %}
+            <div class="table-cell">{{ item.text }}</div>
+            <div class="table-cell">{{ item.points }}</div>
+            <div class="table-cell"><a href="{% url 'backlog:assign_item' item.id %}">{% include 'clipboard.svg' %}</a></div>
+
+            <div class="table-cell"><a href="{% url 'backlog:update_item' item.id %}">{% include 'edit.svg' %}</a></div>
+            <div class="table-cell"><a href="{% url 'backlog:delete_item' item.id %}"">{% include 'trashcan.svg' %}</a></div>
+            {% endfor %}
+    </div>
+
+    {% else %}
+    <p class="empty-msg">No items have been added to the backlog yet.</p>
+    {% endif %}
+
+    <a role="button" class="btn success" href="{% url 'backlog:create_item' %}">Add new item</a>
+
+{% endblock %}

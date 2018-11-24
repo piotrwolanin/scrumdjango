@@ -1,0 +1,33 @@
+.table {
+    width: 70%;
+    display: grid;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1.6rem;
+}
+
+.table-backlog {
+    @extend .table;
+    grid-template-columns: repeat(5, minmax(10rem, 15rem));
+}
+
+.table-sprints {
+    @extend .table;
+    grid-template-columns: repeat(7, minmax(10rem, 15rem));
+}
+
+.table-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1.4rem;
+    border-bottom: var(--border-solid);
+}
+
+.table-header {
+    @extend .table-cell;
+    font-size: 1.5rem;
+    font-weight: 600;
+    grid-row: 1 / 2;
+}

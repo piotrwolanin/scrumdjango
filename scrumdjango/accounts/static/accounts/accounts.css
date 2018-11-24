@@ -1,0 +1,149 @@
+:root {
+  --color-primary: #fffdf8;
+  --color-navbar: green;
+  --border-solid: 2px solid black;
+  --shadow-dark: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 3rem rgba(0, 0, 0, 0.06); }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 30%; } }
+
+body {
+  background-color: var(--color-primary);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
+  line-height: 1.6; }
+
+a {
+  text-decoration: none; }
+
+.danger {
+  background-color: red; }
+
+.info {
+  background-color: skyblue; }
+
+.success {
+  background-color: green; }
+
+.cancel {
+  background-color: darkorange; }
+
+.yellow {
+  background-color: #ffef00; }
+
+.orange {
+  background-color: orange; }
+
+.blue {
+  background-color: #338ce5; }
+
+.pink {
+  background-color: pink; }
+
+main {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center; }
+
+.card {
+  border: var(--border-solid);
+  border-radius: 1rem;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; }
+
+.card-header {
+  padding: 1.5rem;
+  background-color: lightgreen;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: var(--border-solid); }
+
+.card-body {
+  padding: 1.5rem;
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.btn {
+  margin: 1rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: .3rem;
+  color: white;
+  cursor: pointer; }
+
+.form-vertical {
+  display: flex;
+  flex-direction: column; }
+
+.form-horizontal {
+  display: flex;
+  margin: 2rem 0; }
+
+.form-group {
+  margin: 0.5rem 1rem; }
+
+.form-control {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  font-size: 1.4rem;
+  list-style-type: none;
+  display: flex; }
+  .form-control li {
+    padding: 0.5rem 1rem; }
+
+.numeric {
+  width: 8rem; }
+
+.form-label {
+  margin: 0.5rem 0;
+  font-size: 1.4rem; }
+
+.form-error {
+  margin: 0.1rem 0.25rem;
+  font-weight: 600;
+  color: red; }
+
+.form-help {
+  margin: 0.5rem 0.25rem;
+  font-weight: 400;
+  color: #6c757d; }
+  .form-help ul {
+    margin: 0.5rem 1rem; }
+
+.small {
+  margin: 1rem 1rem; }
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center; }
+
+.logout-msg {
+  margin: 1.2rem;
+  font-size: 1.4rem;
+  text-align: center; }

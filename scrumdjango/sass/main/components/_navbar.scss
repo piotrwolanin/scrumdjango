@@ -1,0 +1,17 @@
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: var(--color-navbar);
+    margin-bottom: 1.5rem;
+    padding: 1.2rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    a {
+        color: goldenrod;
+        margin: 0.5rem 0.25rem;
+    }
+}

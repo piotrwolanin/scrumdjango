@@ -1,0 +1,25 @@
+.card {
+    border: var(--border-solid);
+    border-radius: 1rem;  
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 1.5rem;
+    background-color: lightgreen;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: var(--border-solid);
+}
+
+.card-body {
+    padding: 1.5rem;
+    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

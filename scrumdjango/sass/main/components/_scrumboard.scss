@@ -1,0 +1,47 @@
+.board {
+    display: grid;
+    grid-template-columns: 7rem repeat(3, minmax(min-content, 30rem));
+    padding: 1rem;
+    font-size: 1.6rem;
+}
+
+.board-header {
+    grid-row: 1 / 2;
+    border-bottom: var(--border-solid);
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.users {
+    grid-column: 1 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-bottom: var(--border-solid);
+}
+
+.task-column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: var(--border-solid);
+}
+
+.not-started {
+    @extend .task-column;
+    grid-column: 2 / 3;
+}
+
+.in-progress {
+    @extend .task-column;
+    grid-column: 3 / 4;
+}
+
+.done {
+    @extend .task-column;
+    grid-column: 4 / 5;
+}

@@ -1,0 +1,16 @@
+{% extends 'scrum-form.html' %}
+
+{% block buttons %}
+    {% if sprint %}
+        <a role="button" class="btn cancel" href="{% url 'scrumboard:sprint_details' sprint.id %}">Cancel</a>
+    {% elif task and form %}
+        <a role="button" class="btn cancel" href="{% url 'scrumboard:sprint_details' task.sprint.id %}">Cancel</a>
+    {% elif task %}
+        <a role="button" class="btn cancel" href="{% url 'scrumboard:update_task' task.sprint.id task.id %}">Cancel</a>
+    {% elif form.sprint %}
+        <a role="button" class="btn cancel" href="{% url 'scrumboard:sprint_details' form.sprint.value %}">Cancel</a>
+    {% endif %}
+    {% if task and form %}
+        <a role="button" class="btn danger" href="{% url 'scrumboard:delete_task' task.sprint.id task.id %}">Delete</a>
+    {% endif %}
+{% endblock %}

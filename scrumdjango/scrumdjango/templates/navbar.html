@@ -1,0 +1,9 @@
+<nav role="navigation">
+    <ul class="nav-list">
+        <li><a href="{% url 'backlog:items' %}" class="nav-link">Backlog</a></li>
+        <li><a href="{% url 'scrumboard:all_sprints' %}" class="nav-link">All sprints</a></li>
+        <li><a href="{% url 'scrumboard:current_sprint' %}" class="nav-link">Current sprint</a></li>
+        <li><a href="{% url 'accounts:password_change' %}">Change password</a></li>
+        <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+    </ul>
+</nav>

@@ -1,0 +1,13 @@
+@import "base";
+@import "utilities";
+@import "accounts/layout";
+@import "accounts/components/card";
+@import "main/components/button";
+@import "main/components/form";
+
+
+.logout-msg {
+    margin: 1.2rem;
+    font-size: 1.4rem;
+    text-align: center;
+}

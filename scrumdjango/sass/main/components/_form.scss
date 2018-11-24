@@ -1,0 +1,68 @@
+.form-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-horizontal {
+    display: flex;
+    margin: 2rem 0;
+}
+
+.form-group {
+    margin: 0.5rem 1rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    font-size: 1.4rem;
+    list-style-type: none;
+    display: flex;
+
+    li {
+        padding: 0.5rem 1rem;
+    }
+}
+
+.numeric {
+    width: 8rem;
+}
+
+.form-label {
+    margin: 0.5rem 0;
+    font-size: 1.4rem;
+}
+
+.form-error {
+    margin: 0.1rem 0.25rem;
+    font-weight: 600;
+    color: red;
+}
+
+.form-help {
+    margin: 0.5rem 0.25rem;
+    font-weight: 400;
+    color: #6c757d;
+
+    ul {
+        margin: 0.5rem 1rem;
+    }
+}
+
+.small {
+    margin: 1rem 1rem;
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.remove-form {
+    display: flex;
+    align-items: center;
+    align-self: center;
+}

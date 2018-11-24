@@ -1,0 +1,33 @@
+<div class="note {{ task.color }}">
+    
+    <div class="note-body">
+        
+        <p class="note-text">{{ task.text }}</p>
+        
+        <span class="note-points">
+            {{ task.points }}
+        </span>
+
+    </div>
+
+    <div class="note-buttons">
+
+        {% if task.progress < 2 %}
+        <a href="{% url 'scrumboard:progress_task' sprint.id task.id %}">
+            <span>{% include 'checkmark1.svg' %}</span>
+        </a>
+        {% endif %}
+        
+        <a href="{% url 'scrumboard:update_task' sprint.id task.id %}">
+            <span>{% include 'edit.svg' %}</span>
+        </a>
+
+        {% if task.progress > 0 %}
+        <a href="{% url 'scrumboard:unprogress_task' sprint.id task.id %}">
+            <span>{% include 'cancel1.svg' %}</span>
+        </a>
+        {% endif %}
+
+    </div>
+
+</div>

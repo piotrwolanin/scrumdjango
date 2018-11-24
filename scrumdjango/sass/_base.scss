@@ -1,0 +1,47 @@
+:root {
+  --color-primary: #fffdf8;
+  --color-navbar: green;
+  --border-solid: 2px solid black;
+  --shadow-dark: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 3rem rgba(0, 0, 0, 0.06);
+}
+
+$bp-largest: 75em;   // 1200px
+$bp-large: 62.5em;   // 1000px
+$bp-medium: 50em;    // 800px
+$bp-small: 37.5em;    // 600px
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 30%;
+  }
+}
+
+body {
+  background-color: var(--color-primary);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}

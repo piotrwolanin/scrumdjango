@@ -1,0 +1,24 @@
+{% for field in form.visible_fields %}
+
+    <div class="form-group">
+
+        <div class="form-label">
+            {{ field.label_tag }}{% if field.field.required %}*{% endif %}
+        </div>
+        {{ field }}
+        <div class="form-help">
+            {% if field.help_text %}
+                {{ field.help_text }}
+            {% endif %}
+        </div>
+        {% if field.errors %}
+        <div class="form-error">
+            {% for error in field.errors %}
+                {{ error }}
+            {% endfor %}
+        </div>
+        {% endif %}
+
+    </div>
+
+{% endfor %}

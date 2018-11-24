@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Sprints{% endblock %}
+
+{% block content %}
+
+    <h1 class="heading">Sprints</h1>
+
+    {% if sprints %}
+    <div class="table-sprints">
+
+        <div class="table-header">Sprint</div>
+        <div class="table-header">Date from</div>
+        <div class="table-header">Date to</div>
+        <div class="table-header">View tasks</div>
+        <div class="table-header">Edit</div>
+        <div class="table-header">Copy</div>
+        <div class="table-header">Delete</div>
+
+        {% for sprint in sprints %}
+        <div class="table-cell">{{ sprint.number }}</div>
+        <div class="table-cell">{{ sprint.date_from }}</div>
+        <div class="table-cell">{{ sprint.date_to }}</div>
+        <div class="table-cell"><a href="{% url 'scrumboard:sprint_details' sprint.id %}">{% include 'magnifier.svg' %}</a></div>
+        <div class="table-cell"><a href="{% url 'scrumboard:update_sprint' sprint.id %}">{% include 'edit.svg' %}</a></div>
+        <div class="table-cell"><a href="{% url 'scrumboard:copy_sprint' sprint.id %}"">{% include 'files.svg' %}</a></div>
+        <div class="table-cell"><a href="{% url 'scrumboard:delete_sprint' sprint.id %}"">{% include 'trashcan.svg' %}</a></div>
+        {% endfor %}
+
+    </div>
+
+    {% else %}
+    <p class="empty-msg">No sprints have been created yet.</p>
+    {% endif %}
+
+    <a role="button" class="btn success" href="{% url 'scrumboard:create_sprint' %}">Create sprint</a>
+
+{% endblock %}

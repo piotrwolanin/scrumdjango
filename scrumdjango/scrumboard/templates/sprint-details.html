@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Sprint details{% endblock %}
+
+{% block content %}
+
+    <h1 class="heading">Sprint {{ sprint.number }}</h1>
+    <h2 class="sub-heading">From {{ sprint.date_from }} to {{ sprint.date_to }}</h2>
+    <h2 class="sub-heading">Points assigned: {{ points_assigned }}, achieved: {{ points_achieved }}</h2>
+
+    {% if task_assignment %}
+    <div class="board">
+        <div class="board-header">Users</div>
+        <div class="board-header">Not started</div>
+        <div class="board-header">In progress</div>
+        <div class="board-header">Done</div>
+        {% for username, tasks in task_assignment %}
+
+        <div class="users">
+            {{ username }}
+        </div>
+
+        <div class="not-started">
+            {% for task in tasks %}
+            {% if task.progress == 0 %}
+            {% include 'note.html' %}
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="in-progress">
+            {% for task in tasks %}
+            {% if task.progress == 1 %}
+            {% include 'note.html' %}
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="done">
+            {% for task in tasks %}
+            {% if task.progress == 2 %}
+            {% include 'note.html' %}
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        {% endfor %}
+    </div>
+    {% else %}
+    <p class="empty-msg">There are no tasks in this sprint yet.</p>
+    {% endif %}
+
+    <div class="btn-wrapper">
+        <a role="button" class="btn success" href="{% url 'scrumboard:create_task' sprint.id %}">
+            Create task
+        </a>
+        <a role="button" class="btn success" href="{% url 'scrumboard:create_multiple_tasks' sprint.id %}">
+                Create multiple tasks
+            </a>
+        <a role="button" class="btn cancel" href="{% url 'scrumboard:all_sprints' %}">
+            Go back
+        </a>
+    </div>
+
+{% endblock %}
